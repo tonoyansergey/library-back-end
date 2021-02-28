@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure>
+    <deployment>
+        <exclude-subsystems>
+            <subsystem name="logging" />
+        </exclude-subsystems>
+    </deployment>
+    <sub-deployment name="am.egs-web-module-0.1.war">
+        <exclude-subsystems>
+            <subsystem name="logging" />
+        </exclude-subsystems>
+    </sub-deployment>
+<!--    <sub-deployment name="am.egs-ejb-module-0.1.jar">-->
+<!--    </sub-deployment>-->
+</jboss-deployment-structure>

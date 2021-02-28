@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>library-ejb-rest</artifactId>
+        <groupId>am.egs</groupId>
+        <version>0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>ear-module</artifactId>
+    <packaging>ear</packaging>
+
+    <properties>
+        <ejb-module.version>0.1</ejb-module.version>
+        <web-module.version>0.1</web-module.version>
+        <maven-ear-plugin.version>3.0.1</maven-ear-plugin.version>
+    </properties>
+
+    <dependencies>
+<!--        <dependency>-->
+<!--            <groupId>am.egs</groupId>-->
+<!--            <artifactId>ejb-module</artifactId>-->
+<!--            <version>${ejb-module.version}</version>-->
+<!--            <type>ejb</type>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>am.egs</groupId>
+            <artifactId>web-module</artifactId>
+            <version>${web-module.version}</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>${maven-ear-plugin.version}</version>
+                <configuration>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <skinnyWars>true</skinnyWars>
+                    <modules>
+<!--                        <ejbModule>-->
+<!--                            <groupId>am.egs</groupId>-->
+<!--                            <artifactId>ejb-module</artifactId>-->
+<!--                        </ejbModule>-->
+                        <webModule>
+                            <groupId>am.egs</groupId>
+                            <artifactId>web-module</artifactId>
+                            <contextRoot>/</contextRoot>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
